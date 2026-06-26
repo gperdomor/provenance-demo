@@ -1,5 +1,5 @@
 {
-  "name": "@ps-testing/dummy-provenance",
+  "name": "@whiteholeio/dummy-provenance",
   "version": "1.0.0",
   "description": "testing provenance",
   "private": false,
@@ -10,14 +10,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/npm/provenance-demo.git"
+    "url": "git+https://github.com/gperdomor/provenance-demo.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/npm/provenance-demo/issues"
+    "url": "https://github.com/gperdomor/provenance-demo/issues"
   },
-  "homepage": "https://github.com/npm/provenance-demo#readme",
+  "homepage": "https://github.com/gperdomor/provenance-demo#readme",
   "dependencies": {
     "sigstore": "^1.8.0"
   }
