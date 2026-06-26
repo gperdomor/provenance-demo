@@ -27,6 +27,6 @@ jobs:
       - name: Bump package versions
         run: |
           sed -i "s/1.0.0/1.0.0-${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}/" "package.json"
-      - run: pnpm publish --access public --tag next
+      - run: pnpm publish --access public --tag next --no-git-checks
         env:
           NPM_CONFIG_PROVENANCE: true
