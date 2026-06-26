@@ -14,14 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          run_install: false
       - uses: actions/setup-node@v6
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org/
           package-manager-cache: false # never use caching in release builds
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Bump package versions
         run: |
           sed -i "s/1.0.0/1.0.0-${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}/" "package.json"
-      - run: npm publish --access public --tag next
+      - run: pnpm publish --access public --tag next
         env:
           NPM_CONFIG_PROVENANCE: true
