@@ -21,6 +21,7 @@ jobs:
       - name: Bump package versions
         run: |
           sed -i "s/1.0.0/1.0.0-${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}/" "package.json"
-      - run: npm publish --provenance --access public --tag next
+      - run: npm publish --access public --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
